@@ -56,6 +56,47 @@ IIUM community
 # 1.8    SUMMARY 
  This project is done as an assignment for Mobile Application Course, Sem 1 2018/2019 at IIUM.
 provide a bookstore service for IIUM society by using react native framework to develop a mobile application platform
-# 1.9    REFERENCES
+# 1.9    Functionalities in details 
+
+Sign Up: The user must be sign up to access to the information in the application.Connecting with database.Use firebase auth using email and password in login 
+Login:
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+ 
+ 
+Add book:
+ the details  of the book will in the form of Textinput where the user need to provides all the information. Regraidng the image of the book and BarCode I created a new external component where can handle all functionality of photoupload. These information will be stored in states then forwarded to addNewbook(). Which will eventually result into pushing up the data to the DB (Firebase). 
+To send the data object to DB firebase 
+firebase.database().ref().child('books').push().set(data);
+On the other hand, I have created the DB and tables required to store the data of the users as well as the books using FireBase.
+ 
+Edit book:
+User can update the details of the book. This includes updating the book title, book description and book number. As for the codes, we use the 
+Upload Image:
+ can access to the phone gallery and camera by using ImagePicker to display the system UI for choosing an image or a video from the phone's library.
+Also require a permission to access to the phone gallery and camera
+await ImagePicker.launchImageLibraryAsync();
+await Permissions.askAsync (Permissions.CAMERA);
+ 
+Bar Scan code:scan the barcode on the book by using , BarCodeScanner
+ 
+Home page: contain all available book to borrow, all the add book from the user will send to home page.
+Show page: This page is to display the book details. This comprises the book title, book description and book number. As for the codes, we use the <Text> to display the book details.
+
+Features
+List.Section
+TouchableOpacity: Opacity is controlled by wrapping the children in an Animated
+Card
+Object 
+Components 
+Different Libraries.
+Button
+StyleSheet
+Image
+BarCode
+React-native-paper
+
+# 2.0    Data storage structure
+
+# 2.1    REFERENCES
 See [React-Native](https://facebook.github.io/react-native/docs/getting-started)
 See [Firebase](https://firebase.google.com/docs/)
